@@ -1,0 +1,32 @@
+<html>
+<head>
+  <title>To-do List</title>
+</head>
+<body>
+  <h1 style="color:red">To-do List</h1>
+  <input type="text" id="txt" placeholder="Enter an activity">
+  <input type="button" id="btn" value="Submit">
+  <div id="div1">
+    <ul type="circle" id="list">
+    </ul>
+  </div>
+  <script>
+  var e1=document.getElementById('txt')
+  var e2=document.getElementById('btn')
+  e2.addEventListener('click',OnAdd)
+  function OnAdd(){
+    var e3=document.createElement('li')
+    e3.textContent=e1.value
+    var e4=document.getElementById('list')
+    e4.appendChild(e3)
+    var e5=document.createElement('button')
+    var e6=document.createTextNode('Delete')
+    e5.appendChild(e6)
+    e3.appendChild(e5)
+    e5.addEventListener('click',function(){
+      e3.remove()
+    })
+  }
+  </script>
+</body>
+</html>
